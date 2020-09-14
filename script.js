@@ -1,15 +1,4 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
+//Pseudo Code
 //TODO- Create the generatePassword function that displays final password after user responds to prompts. All code exists within this function.
 
 //TODO- Create prompts to ask user for password criteria.
@@ -31,8 +20,57 @@ function writePassword() {
 //TODO- Add a validation to make sure at least one prompt was selected.
 //TODO- Add validation that confirms password is between 8-128 characters.
 
+const resultEl = document.getElementById('result');
+const lengthEL = document.getElementById('length');
+const uppercaseEl = document.getElementById('uppercase');
+const lowercaseEL = document.getElementById('lowercase');
+const numbersEl = document.getElementById('numbers');
+const symbolsEl= document.getElementById('symbols');
+const generateEl = document.getElementById('generate');
 
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol,
+};
 
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() *26) +97);
+}
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() *26) +65);
+}
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() *10) +48);
+}
+function getRandomSymbol() {
+  const symbols = "'!@#$%^&&*()[]{}=<>,.";
+  return String.fromCharCode[Math.floor(Math.random() * symbols.length)];
+}
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+function generatePassword() {
+
+}
+
+// Write password to the #password input
+function writePassword() {
+  prompt ("How many characters?")
+   if(true) {
+   generatePassword(length)
+   }
+  confirm("Uppercase letters?");
+  confirm("Lowercase letters?");
+  confirm("Include Numbers?");
+  confirm("Include Special Symbols?");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
